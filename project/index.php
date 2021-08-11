@@ -17,8 +17,6 @@ $access = (isset($_GET['access']) && $_GET['access'] !='') ? $_GET['access'] : '
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-  <link href='../assets/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
-  <link href='../assets/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
   <link href='../assets/datatables/datatables_bootstrap4.min.css' rel='stylesheet' />
   <link href='../assets/css/sweetalert2.min.css' rel='stylesheet' />
 
@@ -26,14 +24,9 @@ $access = (isset($_GET['access']) && $_GET['access'] !='') ? $_GET['access'] : '
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
-  <!-- <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script> -->
   <script src="../assets/js/plugins/moment.min.js"></script>
   <script src="../assets/js/plugins/sweetalert2.js"></script>
-  <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-  <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
-  <script src="../assets/js/plugins/nouislider.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-  <script src="../assets/js/plugins/arrive.min.js"></script>
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <script src="../assets/demo/demo.js"></script>
   <script src="../assets/datatables/jquery_datatables.min.js"></script>
@@ -88,7 +81,6 @@ $access = (isset($_GET['access']) && $_GET['access'] !='') ? $_GET['access'] : '
         }
 
         $('.fixed-plugin a').click(function(event) {
-          // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
               event.stopPropagation();
@@ -209,11 +201,7 @@ $access = (isset($_GET['access']) && $_GET['access'] !='') ? $_GET['access'] : '
             $('body').removeClass('sidebar-mini');
             md.misc.sidebar_mini_active = false;
 
-            // $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
-
           } else {
-
-            // $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
             setTimeout(function() {
               $('body').addClass('sidebar-mini');
@@ -222,12 +210,10 @@ $access = (isset($_GET['access']) && $_GET['access'] !='') ? $_GET['access'] : '
             }, 300);
           }
 
-          // we simulate the window Resize so the charts will get updated in realtime.
           var simulateWindowResize = setInterval(function() {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
-          // we stop the simulation of Window Resize after the animations are completed
           setTimeout(function() {
             clearInterval(simulateWindowResize);
           }, 1000);
@@ -238,8 +224,6 @@ $access = (isset($_GET['access']) && $_GET['access'] !='') ? $_GET['access'] : '
   </script>
   <script>
     $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      // md.initDashboardPageCharts();
 
     });
   </script>
