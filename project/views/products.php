@@ -14,7 +14,7 @@ $prodCat = new CoreFunctions();
       <div class="card-body">
         <div class="row">
             <div class='col-sm-12'>
-                <button class='btn btn-sm btn-primary pull-right' data-toggle='modal' data-target='#addproduct' id='product_btn'> Add Data </button>
+                <button class='btn btn-sm btn-success pull-right' data-toggle='modal' data-target='#addproduct' id='product_btn'> <span class="fa fa-plus-circle"></span> Add Data </button>
             </div>
             <div class='col-sm-12'>
                 <div class="table-responsive">

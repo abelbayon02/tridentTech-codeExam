@@ -11,7 +11,7 @@ $prodCat = new CoreFunctions();
       <div class="card-body">
         <div class="row">
             <div class='col-sm-12'>
-                <button class='btn btn-sm btn-primary pull-right' data-toggle='modal' data-target='#productCategory' id='productCategory_btn'> Add Data </button>
+                <button class='btn btn-sm btn-success pull-right' data-toggle='modal' data-target='#productCategory' id='productCategory_btn'><span class="fa fa-plus-circle"></span> Add Data </button>
             </div>
             <div class='col-sm-12'>
                 <div class="table-responsive">
@@ -56,7 +56,7 @@ $(document).ready( function(){
       e.preventDefault();
       $("#create_btn").prop("disabled", true);
       $("#create_btn").html("<span class='fa fa-spin fa-spinner'></span> Loading");
-      var url = 'ajax/add_category.php';
+      var url = 'ajax/CRUD_category.php';
       var data = $(this).serialize();
       $.post(url, data, function(data){
         if(data == 1){
@@ -78,10 +78,11 @@ function updateCategory(category_id){
     if(conf == true){
     $("#updateBtn"+category_id).prop("disabled", true);
     $("#updateBtn"+category_id).html("<span class='fa fa-spin fa-spinner'></span>");
-    $.post("ajax/update_category.php", {
+    $.post("ajax/CRUD_category.php", {
         name: name,
         categ: categ,
-        category_id: category_id
+        category_id: category_id,
+        action: action
     }, function(data){
         if(data == 1){
             alert_response("All Good!","Category Name Successfully Updated!","success");
@@ -99,8 +100,9 @@ function deleteCategory(category_id){
     if(conf == true){
     $("#deleteBtn"+category_id).prop("disabled", true);
     $("#deleteBtn"+category_id).html("<span class='fa fa-spin fa-spinner'></span>");
-    $.post("ajax/delete_category.php", {
-        category_id: category_id
+    $.post("ajax/CRUD_category.php", {
+        category_id: category_id,
+        action: action
     }, function(data){
         if(data > 0){
             alert_response("All Good!","Category was Successfully Deleted!","success");

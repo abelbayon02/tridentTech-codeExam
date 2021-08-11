@@ -11,7 +11,7 @@
         <span class="navbar-toggler-icon icon-bar"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav">
+        <!-- <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="material-icons">notifications</i>
@@ -22,7 +22,7 @@
               <span class='divider'></span>
             </div>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </nav>
